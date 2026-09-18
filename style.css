@@ -1,1 +1,714 @@
+/* =================================
+   RESET
+================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #10152e;
+  color: #f6e7b0;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =================================
+   HUD
+================================= */
+
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  background: rgba(10, 15, 35, .8);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,.1);
+
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.logo span,
+.hero h1 span {
+  color: #f4c95d;
+}
+
+.xp {
+  font-family: monospace;
+}
+
+#menuBtn {
+  display: none;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+  min-height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #101b43,
+      #243b76 60%,
+      #18264b
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+
+  padding: 20px;
+}
+
+.level {
+  font-family: monospace;
+  letter-spacing: 4px;
+  font-size: 12px;
+
+  color: #e7b957;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 12vw, 150px);
+
+  line-height: .85;
+
+  font-weight: 900;
+
+  letter-spacing: -5px;
+}
+
+.subtitle {
+  margin: 30px 0;
+
+  font-size: 18px;
+
+  color: #d8d5c8;
+}
+
+
+/* =================================
+   LUA
+================================= */
+
+.moon {
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  border-radius: 50%;
+
+  background: #f4d77b;
+
+  top: 17%;
+  right: 13%;
+
+  box-shadow:
+    0 0 30px rgba(244,215,123,.5);
+}
+
+
+/* =================================
+   ESTRELAS
+================================= */
+
+.stars,
+.stars::before,
+.stars::after {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  background: #f8e8a8;
+
+  border-radius: 50%;
+
+  box-shadow:
+    100px 40px #f8e8a8,
+    220px 100px #f8e8a8,
+    350px 50px #f8e8a8,
+    480px 130px #f8e8a8,
+    620px 60px #f8e8a8,
+    760px 160px #f8e8a8,
+    880px 40px #f8e8a8,
+    1000px 120px #f8e8a8;
+}
+
+.stars {
+  top: 20%;
+  left: 5%;
+}
+
+
+/* =================================
+   MONTANHAS
+================================= */
+
+.mountains {
+  position: absolute;
+
+  bottom: 80px;
+  left: 0;
+
+  width: 100%;
+  height: 220px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 35%,
+      #152746 36% 65%,
+      transparent 66%
+    );
+
+  opacity: .8;
+}
+
+
+/* =================================
+   CHÃO
+================================= */
+
+.ground,
+.game-ground {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 80px;
+
+  background:
+    repeating-linear-gradient(
+      150deg,
+      #173b35 0 12px,
+      #285044 13px 23px
+    );
+}
+
+
+/* =================================
+   BOTÕES
+================================= */
+
+.game-button {
+  display: inline-block;
+
+  border: 0;
+
+  padding: 16px 24px;
+
+  background: #e0a93a;
+
+  color: #111;
+
+  font-weight: 900;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  border-radius: 4px;
+
+  transition: .2s;
+}
+
+.game-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 0 #9d7220;
+}
+
+
+/* =================================
+   SEÇÕES
+================================= */
+
+.section {
+  position: relative;
+
+  padding: 120px 8%;
+
+  background: #111832;
+}
+
+.section.night {
+  background: #0d1530;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title span {
+  font-family: monospace;
+
+  color: #d9a842;
+
+  font-size: 13px;
+}
+
+.section-title h2 {
+  font-size: clamp(38px, 6vw, 80px);
+
+  margin-top: 8px;
+}
+
+
+/* =================================
+   SOBRE
+================================= */
+
+.about-card {
+  max-width: 900px;
+
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 40px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  background: #17203d;
+}
+
+.pixel-avatar {
+  width: 150px;
+  height: 150px;
+
+  display: grid;
+  place-items: center;
+
+  background: #e0a93a;
+
+  color: #151515;
+
+  font-size: 70px;
+
+  font-weight: 900;
+}
+
+.about-card h3 {
+  font-size: 32px;
+
+  margin-bottom: 20px;
+}
+
+.about-card p {
+  color: #c9c8c0;
+
+  line-height: 1.7;
+
+  margin-bottom: 15px;
+}
+
+
+/* =================================
+   SKILLS
+================================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.skill {
+  padding: 30px;
+
+  background: #18213e;
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  transition: .3s;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+}
+
+.skill span {
+  font-family: monospace;
+
+  color: #d7a944;
+}
+
+.skill h3 {
+  margin: 30px 0 10px;
+
+  font-size: 25px;
+}
+
+.skill p {
+  color: #aaa;
+}
+
+
+/* =================================
+   PROJETOS
+================================= */
+
+.projects {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+
+  max-width: 1000px;
+}
+
+.project {
+  padding: 35px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b2647,
+      #121a35
+    );
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+.project-number {
+  font-family: monospace;
+
+  color: #d6a43f;
+}
+
+.project-icon {
+  font-size: 50px;
+
+  margin: 25px 0;
+}
+
+.project h3 {
+  font-size: 32px;
+}
+
+.project p {
+  color: #bbb;
+
+  line-height: 1.6;
+
+  margin: 15px 0;
+}
+
+.tags {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+}
+
+.tags span {
+  padding: 6px 10px;
+
+  background: #293354;
+
+  font-family: monospace;
+
+  font-size: 12px;
+}
+
+.project a {
+  color: #f0c75e;
+
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+.locked {
+  opacity: .6;
+}
+
+.locked-text {
+  font-family: monospace;
+
+  color: #777;
+}
+
+
+/* =================================
+   MINI GAME
+================================= */
+
+.game-section {
+  background: #0b1127;
+}
+
+.game {
+  max-width: 900px;
+
+  padding: 20px;
+
+  background: #151e3a;
+
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.game-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 10px 5px 20px;
+
+  font-family: monospace;
+}
+
+.game-world {
+  position: relative;
+
+  height: 400px;
+
+  overflow: hidden;
+
+  background: #162452;
+}
+
+.game-sky {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      #f3c95c 0 5%,
+      transparent 6%
+    ),
+    linear-gradient(
+      #14204c,
+      #30477d
+    );
+}
+
+.player {
+  position: absolute;
+
+  width: 35px;
+  height: 45px;
+
+  left: 50%;
+
+  bottom: 60px;
+
+  display: grid;
+  place-items: center;
+
+  background: #d75f32;
+
+  color: white;
+
+  font-weight: bold;
+
+  z-index: 5;
+}
+
+.collectible {
+  position: absolute;
+
+  left: 70%;
+
+  top: 45%;
+
+  font-size: 35px;
+
+  color: #f5cd58;
+
+  text-shadow:
+    0 0 15px #f5cd58;
+
+  z-index: 5;
+
+  animation: float 1.5s infinite alternate;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-12px);
+  }
+}
+
+.game-ground {
+  height: 60px;
+
+  z-index: 4;
+}
+
+.game-instruction {
+  color: #aaa;
+
+  margin: 20px 0;
+}
+
+
+/* =================================
+   CONTATO
+================================= */
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #bbb;
+
+  margin-bottom: 30px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+  padding: 30px 8%;
+
+  background: #080d1d;
+
+  color: #777;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  font-family: monospace;
+}
+
+
+/* =================================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 800px) {
+
+  .hud {
+    padding: 0 5%;
+  }
+
+  #menuBtn {
+    display: block;
+
+    background: none;
+
+    border: 0;
+
+    color: white;
+
+    font-size: 22px;
+  }
+
+  .xp {
+    display: none;
+  }
+
+  .moon {
+    width: 80px;
+    height: 80px;
+
+    right: 8%;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 90px 6%;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .game-world {
+    height: 320px;
+  }
+
+           }
