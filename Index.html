@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lucas.Dev — A Jornada</title>
+
+  <meta
+    name="description"
+    content="Portfólio de Lucas — desenvolvedor em formação."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       MENU
+  ========================== -->
+
+  <header class="hud">
+
+    <div class="logo">
+      LUCAS<span>.DEV</span>
+    </div>
+
+    <div class="xp">
+      XP <strong id="xp">000</strong>
+    </div>
+
+    <button id="menuBtn">☰</button>
+
+  </header>
+
+
+  <!-- =========================
+       HERO / TELA INICIAL
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="stars"></div>
+
+      <div class="moon"></div>
+
+      <div class="hero-content">
+
+        <p class="level">
+          LEVEL 01 — DEVELOPER
+        </p>
+
+        <h1>
+          LUCAS<span>.DEV</span>
+        </h1>
+
+        <p class="subtitle">
+          Uma jornada através do código.
+        </p>
+
+        <button
+          class="game-button"
+          id="startButton"
+        >
+          ▶ INICIAR JORNADA
+        </button>
+
+      </div>
+
+      <div class="mountains"></div>
+
+      <div class="ground"></div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE
+    ========================== -->
+
+    <section class="section" id="sobre">
+
+      <div class="section-title">
+        <span>FASE 01</span>
+        <h2>QUEM SOU</h2>
+      </div>
+
+      <div class="about-card">
+
+        <div class="pixel-avatar">
+          L
+        </div>
+
+        <div>
+
+          <h3>
+            Lucas Daniel
+          </h3>
+
+          <p>
+            Desenvolvedor em formação, apaixonado por
+            tecnologia, programação e criação de experiências
+            para a web.
+          </p>
+
+          <p>
+            Atualmente construindo meus primeiros projetos
+            e evoluindo minhas habilidades através da prática.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="section night" id="skills">
+
+      <div class="section-title">
+        <span>FASE 02</span>
+        <h2>HABILIDADES</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill">
+          <span>01</span>
+          <h3>HTML</h3>
+          <p>Estruturação de páginas.</p>
+        </div>
+
+        <div class="skill">
+          <span>02</span>
+          <h3>CSS</h3>
+          <p>Design e responsividade.</p>
+        </div>
+
+        <div class="skill">
+          <span>03</span>
+          <h3>JavaScript</h3>
+          <p>Interações e lógica.</p>
+        </div>
+
+        <div class="skill">
+          <span>04</span>
+          <h3>Python</h3>
+          <p>Programação e automação.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJETOS
+    ========================== -->
+
+    <section class="section" id="projetos">
+
+      <div class="section-title">
+        <span>FASE 03</span>
+        <h2>MISSÕES</h2>
+      </div>
+
+      <div class="projects">
+
+        <article class="project">
+
+          <div class="project-number">
+            #001
+          </div>
+
+          <div class="project-icon">
+            🌻
+          </div>
+
+          <h3>
+            ADOTAÊ
+          </h3>
+
+          <p>
+            Projeto web desenvolvido para apresentar
+            animais disponíveis para adoção.
+          </p>
+
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+
+          <a
+            href="https://lucas248-art.github.io/ADOTA-/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VER MISSÃO →
+          </a>
+
+        </article>
+
+
+        <article class="project locked">
+
+          <div class="project-number">
+            #002
+          </div>
+
+          <div class="project-icon">
+            🔒
+          </div>
+
+          <h3>
+            PRÓXIMO PROJETO
+          </h3>
+
+          <p>
+            Uma nova missão está sendo desenvolvida.
+          </p>
+
+          <span class="locked-text">
+            EM DESENVOLVIMENTO
+          </span>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MINI GAME
+    ========================== -->
+
+    <section class="section game-section" id="game">
+
+      <div class="section-title">
+
+        <span>FASE BÔNUS</span>
+
+        <h2>
+          MINI GAME
+        </h2>
+
+      </div>
+
+      <div class="game">
+
+        <div class="game-top">
+
+          <span>
+            ⭐ ESTRELAS
+          </span>
+
+          <strong id="gameScore">
+            0
+          </strong>
+
+        </div>
+
+        <div
+          class="game-world"
+          id="gameWorld"
+        >
+
+          <div class="game-sky"></div>
+
+          <div
+            class="collectible"
+            id="star"
+          >
+            ★
+          </div>
+
+          <div
+            class="player"
+            id="player"
+          >
+            L
+          </div>
+
+          <div class="game-ground"></div>
+
+        </div>
+
+        <p class="game-instruction">
+
+          Use ← → para mover o personagem e
+          pegue as estrelas.
+
+        </p>
+
+        <button
+          class="game-button"
+          id="restartGame"
+        >
+          REINICIAR JOGO
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTATO
+    ========================== -->
+
+    <section class="section contact" id="contato">
+
+      <div class="section-title">
+
+        <span>FASE FINAL</span>
+
+        <h2>
+          FIM DA JORNADA?
+        </h2>
+
+      </div>
+
+      <p>
+        Talvez seja apenas o começo.
+      </p>
+
+      <a
+        class="game-button"
+        href="mailto:seuemail@email.com"
+      >
+        🚀 ENTRAR EM CONTATO
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      © 2026 Lucas.Dev
+    </p>
+
+    <p>
+      Construído com código e criatividade.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
